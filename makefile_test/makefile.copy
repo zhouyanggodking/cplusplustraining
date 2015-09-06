@@ -1,0 +1,10 @@
+main.out: class_a.o main.o
+	g++ -o main.out class_a.o main.o
+class_a.o: class_a.h class_a.cpp
+	g++ -c class_a.h class_a.cpp
+main.o: main.cpp
+	g++ -c main.cpp
+.PHONY: clean
+clean:
+	-rm -rf *.o *.out
+	ls
